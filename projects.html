@@ -18,9 +18,9 @@
                     <li class="nav-item"> <a class="nav-link" href="aboutus.html">About us</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="services.html">Services</a> </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a> </li>
+                        <a class="selected nav-link" href="projects.html">Projects</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="products.html">Products</a> </li>
-                     <li class="nav-item"> <a class="selected nav-link" href="newsroom.html">News</a> </li>
+                     <li class="nav-item"> <a class="nav-link" href="newsroom.html">News</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="contact.html">Contact us</a> </li>
                 </ul>
             </div>
@@ -28,7 +28,7 @@
     </div>
     <div class="spacer"></div>
     
-    <p class="garchig">News room</p>
+    <p class="garchig"> Our Projects </p>
     <center><div class="headerline"></div></center>
     <div class="col-md-12 ">
         <div class="container heseg">
@@ -44,10 +44,9 @@
 
         <div class="container heseg">
             <div class="row justify-content-around">
-                <div id="LoadMore" class="col-md-4 align-self-center"> <a onclick="loadMore()" type="a" class="btn btn-secondary">More news</a> </div>
+                <div id="LoadMore" class="col-md-4 align-self-center"> <a onclick="loadMore()" type="a" class="btn btn-secondary">Өмнөх Services</a> </div>
                    
             </div>
-            
             <center><img id="preloader" class="mb-5" src="image/preloader.svg" style="width:40px"> </center>
             <div class="ImageContainer col-12"></div>
         </div>
@@ -94,7 +93,7 @@
                             <br>Phone: +976 77012929, 86018600</li>
                     </ul>
                 </div>
-         
+                
                 <div class="col-md-12 mt-2 mb-4">
                     <p class="mr-auto ml-auto text-center">COPYRIGHT 2019 GSCON LLC</p>
                 </div>
@@ -105,7 +104,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script>
-       
         var pageToken;
         $(document).ready(function () {
             var url_p = new URL(window.location.href);
@@ -124,9 +122,9 @@
         }
 
         function makeUrl(pageToken, maxResult) {
-            if (pageToken) return "https://www.googleapis.com/blogger/v3/blogs/1769522505254885076/posts?maxResults=" + maxResult + "&labels=news&pageToken=" + pageToken + "&callback=handleResponse&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU";
+            if (pageToken) return "https://www.googleapis.com/blogger/v3/blogs//posts?maxResults=" + maxResult + "&labels=news&pageToken=" + pageToken + "&callback=handleResponse&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU";
             else {
-                return "https://www.googleapis.com/blogger/v3/blogs/1769522505254885076/posts?maxResults=" + maxResult + "&labels=news&callback=handleResponse&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU";
+                return "https://www.googleapis.com/blogger/v3/blogs//posts?maxResults=" + maxResult + "&labels=news&callback=handleResponse&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU";
             }
         }
 
@@ -150,9 +148,9 @@
                 html += '</div></div></div>';
                 $('#newsContainer').append(html);
             });
-     $('.readMore').click(function () {
+            $('.readMore').click(function () {
                 //                localStorage.setItem("postID", $(this).attr('postID'));
-                window.location.href = "news.html?article=" + $(this).attr('postID');
+                window.location.href = "projects.html?article=" + $(this).attr('postID');
                 //                        alert($(this).attr('postID'));
             });
             var titles = $(".card-title");
@@ -164,9 +162,8 @@
         }
 
         function loadMore() {
-            window.location.href = "News.html?page=" + pageToken;
+            window.location.href = "news.html?page=" + pageToken;
         }
-    
     </script>
 </body>
 
