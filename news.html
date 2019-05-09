@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>GSCON</title>
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
      </head>
-
 <body>
     <div class="navigationcontainer">
          <nav class="navbar navbar-expand-lg navbar-light rounded container">
@@ -35,13 +33,11 @@
                         <br>
                         <br>
                         <div class="blog-post-header">
-                            <!--                                <img src="web/image/team/blog-post/1.jpg" alt="blog-details">-->
                             <h3 id="postheader3" class="blog-title"></h3>
                             <h6 id="postdate3" class="meta"><i class="fa fa-calendar-o" aria-hidden="true"></i></h6> </div>
                         <div id="postbody3" class="postbody"> </div>
                     </div>
                 </div>
-                <!-- col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 -->
             </div>
         </div>
         <br>
@@ -86,7 +82,6 @@
                             <br>Phone: +976 77012929, 86018600</li>
                     </ul>
                 </div>
-                
                 <div class="col-md-12 mt-2 mb-4">
                     <p class="mr-auto ml-auto text-center">COPYRIGHT 2019 GSCON LLC</p>
                 </div>
@@ -101,43 +96,21 @@
             return "https://www.googleapis.com/blogger/v3/blogs/1769522505254885076/posts/" +
                 articleID + "/?key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU";
         }
-
         $(document).ready(function () {
-
             var url_p = new URL(window.location.href);
             var articleID = url_p.searchParams.get("article");
-
-
-
-
             var url = makeUrl( articleID ? articleID :  localStorage.getItem("postID"));
-
             var jsonHttp = new XMLHttpRequest();
             jsonHttp.addEventListener("load", handleResponse);
             jsonHttp.open("GET", url, false);
             jsonHttp.send(null);
-
             function handleResponse() {
                 var jsonData = JSON.parse(this.responseText);
                 $('#postheader3').html(jsonData.title);
                 $('#postdate3').html(jsonData.published.substring(0, 10));
                 $('#postbody3').html(jsonData.content);
             }
-            $("#content").load("1-burtguulekh.html");
-            $("#button1").click(function () {
-                $("#content").load("1-burtguulekh.html").fadeIn("normal");
-            });
-            $("#button2").click(function () {
-                $("#content").load("2-zeel.html").fadeIn("normal");
-            });
-            $("#button3").click(function () {
-                $("#content").load("3-tulukh.html").fadeIn("normal");
-            });
-            $("#button4").click(function () {
-                $("#content").load("4-onoo.html").fadeIn("normal");
-            });
         });
     </script>
 </body>
-
 </html>
