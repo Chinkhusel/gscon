@@ -26,7 +26,7 @@
         </nav>
     </div>
     <div class="spacer"></div>
-     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
   <div id="carouselcontainer" class="carousel-inner">
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -87,7 +87,7 @@
                         <li class="mt-3 mb-5" style="font-weight: 300;"> Suite #5002, Galaxy Tower, Mahatma Gandhi street, 15th khoroo, Khan-Uul district, Ulaanbaatar city, Mongolia
                             <br>
                             <br>E mail: info@gscon.mn
-                            <br>Phone: +976 77012929, 86018600</li>
+                            <br>Phone: +976 77012929, 88065505</li>
                     </ul>
                 </div>
                 <div class="col-md-12 mt-2 mb-4">
@@ -144,14 +144,17 @@
                 html += '<img class="card-img-top" src="' + $($('.ImageContainer').find('img', 'thumbnail')[0]).attr('src') + '">';
                 html += '</div>';
                 $('#carouselcontainer').append(html);
+                 $('#carouselcontainer :first').addClass('active');
             });
         }
     </script>
+<!--
     <script>
     $( document ).ready(function() {
     $('#carouselcontainer :first').addClass('active');
 });
     </script>
+-->
 
     <script src="https://www.googleapis.com/blogger/v3/blogs/1769522505254885076/posts?labels=banner&callback=bannerResponse&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU"></script>
 </body>
