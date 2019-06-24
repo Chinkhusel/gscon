@@ -26,7 +26,7 @@
         </nav>
     </div>
     <div class="spacer"></div>
-     <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
+     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <div id="carouselcontainer" class="carousel-inner">
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -45,7 +45,7 @@
             <div id="newsContainer" class="row justify-content-center">
                 <div class="ImageContainer"></div>
             </div>
-            <div class="col-md-4 align-self-center"> <a id="newsbtn" href="News.html" type="a" class="btn btn-secondary">News</a> </div>
+            <div class="col-md-4 align-self-center"> <a id="newsbtn" href="newsroom.html" type="a" class="btn btn-secondary">News</a> </div>
         </div>
         <div class="ImageContainer col-12"></div>
     </div>
@@ -144,19 +144,10 @@
                 html += '<img class="card-img-top" src="' + $($('.ImageContainer').find('img', 'thumbnail')[0]).attr('src') + '">';
                 html += '</div>';
                 $('#carouselcontainer').append(html);
-                 console.log('call once and never again!');
                 $('#carouselcontainer :first').addClass('active');           
             });
         }
     </script>
-<!--
-    <script>
-    $( document ).ready(function() {
-    $('#carouselcontainer :first').addClass('active');
-});
-    </script>
--->
-
     <script src="https://www.googleapis.com/blogger/v3/blogs/1769522505254885076/posts?labels=banner&callback=bannerResponse&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU"></script>
 </body>
 </html>
