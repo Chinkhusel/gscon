@@ -101,10 +101,10 @@
             $.each(jsonData, function (index, item) {
                 var html = "";
                  $('.ImageContainer').html(item.content + '</div>');
-                html = '<div class="col-md-6">';
+                html = '<div class="col-md-6 mt-5">';
                 html += '<div class="">';
                 html += '<div id="thumbnail-img1" class="img-responsive">';
-                html += '<img class="card-img-top" src="' + $($('.ImageContainer').find('img', 'thumbnail')[0]).attr('src') + '">';                
+                html += '<img class="card-img-top" src="' + $($('.ImageContainer').find('img', 'thumbnail')[0]).attr('src') + '">';         
                 html += '</div>';
                 html += '<div class="">';
                 html += '<h6 class="garchigmedee mt-4">' + item.title + '</h6>';
