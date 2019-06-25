@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>GSCON</title>
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 </head>
+
 <body>
     <div class="navigationcontainer">
-         <nav class="navbar navbar-expand-lg navbar-light rounded container">
+        <nav class="navbar navbar-expand-lg navbar-light rounded container">
             <a class="nav-link" href="index.html"><img class="logo" src="image/logo.svg"></a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
             <div class="navbar-collapse collapse" id="navbarsExample09" style="">
@@ -18,7 +21,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="projects.html">Projects</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="products.html">Products</a> </li>
-                     <li class="nav-item"> <a class="nav-link" href="newsroom.html">News</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="newsroom.html">News</a> </li>
                     <li class="nav-item"> <a class="selected nav-link" href="brochure.html">Brochures</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="contact.html">Contact us</a> </li>
                 </ul>
@@ -26,21 +29,23 @@
         </nav>
     </div>
     <div class="spacer"></div>
-    
-    <p id="#faq"  class="garchig">Download brochures </p>
-    <center><div class="headerline"></div></center>
-    <div class="container">
-            <div id="brochure" class="row">
 
-            </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-       
+    <p id="#faq" class="garchig">Download brochures </p>
+    <center>
+        <div class="headerline"></div>
+    </center>
+    <div class="container">
+        <div id="brochure" class="row">
+
         </div>
-     <div class="ImageContainer"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+    <div class="ImageContainer"></div>
     <div class="footer">
         <div class="container">
             <div class="row pt-5">
@@ -91,24 +96,23 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
-    
+
+
 
     <script>
         function handleResponse(response) {
             var jsonData = response.items;
             var imgList = ""
-            $.each(jsonData, function (index, item) {
+            $.each(jsonData, function(index, item) {
                 var html = "";
-                 $('.ImageContainer').html(item.content + '</div>');
+                $('.ImageContainer').html(item.content + '</div>');
                 html = '<div class="col-md-6 mt-5">';
                 html += '<div class="">';
                 html += '<div id="thumbnail-img1" class="img-responsive">';
-                html += '<img class="card-img-top" src="' + $($('.ImageContainer').find('img', 'thumbnail')[0]).attr('src') + '">';         
+                html += '<img class="card-img-top" src="' + $($('.ImageContainer').find('img', 'thumbnail')[0]).attr('src') + '">';
                 html += '</div>';
                 html += '<div class="">';
                 html += '<h6 class="garchigmedee mt-4">' + item.title + '</h6>';
-                html += '<br>'
                 html += '<a target="_blank" href="' + $($('.ImageContainer').find('a')[1]).attr('href') + '" class="readMore btn-text" >DOWNLOAD</a>';
                 html += '</div></div></div>';
                 $('#brochure').append(html);
@@ -116,6 +120,7 @@
         }
     </script>
 
-     <script src="https://www.googleapis.com/blogger/v3/blogs/1769522505254885076/posts?labels=brochure&callback=handleResponse&maxResults=3&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU"></script>
+    <script src="https://www.googleapis.com/blogger/v3/blogs/1769522505254885076/posts?labels=brochure&callback=handleResponse&maxResults=3&key=AIzaSyC0do2S_CoXbFkZfenAQ_hRqNhEnRDUVwU"></script>
 </body>
+
 </html>
